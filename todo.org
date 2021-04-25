@@ -1,0 +1,7 @@
+* TODO use bump2version?
+  [[https://github.com/audreyfeldroy/cookiecutter-pypackage][example]]
+  [[https://github.com/c4urself/bump2version][project website]]
+
+* TODO pyproject.toml and/or setup.cfg
+
+* TODO compiling and linting THIS project

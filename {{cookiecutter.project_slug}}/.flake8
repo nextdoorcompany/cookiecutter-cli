@@ -1,0 +1,7 @@
+[flake8]
+# E203: whitespace before :
+# E501: line lengths
+# E722: bare except covered by pylint
+# E741: ambiguous variable name
+# W503: line break before binary operator
+ignore = E501, E722, E741, W503, E203

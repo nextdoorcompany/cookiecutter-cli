@@ -1,0 +1,9 @@
+pip
+wheel
+setuptools
+doit
+pytest
+pylint
+flake8
+isort
+black

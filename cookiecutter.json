@@ -1,0 +1,6 @@
+{
+    "project_slug": "my-project",
+    "scripts_or_bin": "Scripts",
+    "local_wheels_repo": "path/to/repo",
+    "root_python_exe": "py"
+}
