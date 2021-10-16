@@ -1,0 +1,13 @@
+* cookiecutter gh:nextdoorcompany/cookiecutter-cli
+
+* Starting a git repo
+[[https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line][GH docs]]
+[[https://git-scm.com/docs/git-init][git docs]]
+  + git init -b main
+  + add/commit
+  + set up repo at GitHub
+  + git remote add origin <remote_url>
+  + git remote -v
+  + git push origin main
+
+* Set PYTHONSTARTUP environment variable to .pythonrc in project root
