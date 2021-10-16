@@ -24,7 +24,7 @@ def task_flake8():
         yield {
             "name": f.name,
             "actions": [
-                [r"env\{{cookiecutter.scripts_or_bin}}\python", "-m", "flake8", f]
+                ["env/{{cookiecutter.scripts_or_bin}}/python", "-m", "flake8", f]
             ],
             "file_dep": [f],
         }
@@ -36,7 +36,7 @@ def task_lint():
             "name": f.name,
             "actions": [
                 [
-                    r"env\{{cookiecutter.scripts_or_bin}}\python",
+                    "env/{{cookiecutter.scripts_or_bin}}/python",
                     "-m",
                     "pylint",
                     "--output-format=parseable",
@@ -52,7 +52,7 @@ def task_test():
         yield {
             "name": f.name,
             "actions": [
-                [r"env\{{cookiecutter.scripts_or_bin}}\python", "-m", "pytest", f]
+                ["env/{{cookiecutter.scripts_or_bin}}/python", "-m", "pytest", f]
             ],
             "file_dep": [f],
         }
@@ -64,7 +64,7 @@ def task_isort():
             "name": f.name,
             "actions": [
                 [
-                    r"env\{{cookiecutter.scripts_or_bin}}\python",
+                    "env/{{cookiecutter.scripts_or_bin}}/python",
                     "-m",
                     "isort",
                     "--profile",
@@ -83,7 +83,7 @@ def task_black():
             "name": f.name,
             "actions": [
                 [
-                    r"env\{{cookiecutter.scripts_or_bin}}\python",
+                    "env/{{cookiecutter.scripts_or_bin}}/python",
                     "-m",
                     "black",
                     "--check",
@@ -130,10 +130,18 @@ def task_upgrade_deps():
                 "pip",
                 "install",
                 "-r",
-                "requirements.txt",
+                "requirements-bootstrap.txt",
                 "-U",
             ]
         )
+        subprocess.call(
+            [
+                "env/{{cookiecutter.scripts_or_bin}}/pip-compile",
+                "--upgrade",
+                "requirements.in",
+            ]
+        )
+        subprocess.call(["env/{{cookiecutter.scripts_or_bin}}/pip-sync"])
         return True
 
     return {"actions": [python_upgrade_deps]}
