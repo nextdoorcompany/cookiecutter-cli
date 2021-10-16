@@ -5,3 +5,7 @@
 * TODO pyproject.toml and/or setup.cfg
 
 * TODO compiling and linting THIS project
+
+* TODO test on Linux
+
+* TODO add Emacs GUD command
