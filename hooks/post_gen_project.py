@@ -9,7 +9,20 @@ subprocess.call(
         "pip",
         "install",
         "-r",
-        "requirements.txt",
+        "requirements-bootstrap.txt",
         "-U",
+    ]
+)
+
+subprocess.call(
+    [
+        "env/{{cookiecutter.scripts_or_bin}}/pip-compile",
+        "requirements.in",
+    ]
+)
+
+subprocess.call(
+    [
+        "env/{{cookiecutter.scripts_or_bin}}/pip-sync",
     ]
 )

@@ -1,6 +1,3 @@
-pip
-wheel
-setuptools
 doit
 pytest
 pylint
@@ -8,3 +5,6 @@ flake8
 flake8-print
 isort
 black
+rich
+# click
+# pyodbc
