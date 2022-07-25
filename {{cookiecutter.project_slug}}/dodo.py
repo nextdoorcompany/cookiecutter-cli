@@ -4,11 +4,11 @@ from pathlib import Path
 
 DOIT_CONFIG = {
     "default_tasks": [
-        "test",
-        "lint",
-        "flake8",
         "isort",
         "black",
+        "lint",
+        "flake8",
+        "test",
     ],
     "continue": True,
 }
@@ -24,7 +24,14 @@ def task_flake8():
         yield {
             "name": f.name,
             "actions": [
-                ["env/{{cookiecutter.scripts_or_bin}}/python", "-m", "flake8", f]
+                [
+                    "env/{{cookiecutter.scripts_or_bin}}/python",
+                    "-m",
+                    "flake8",
+                    "--max-complexity",
+                    "7",
+                    f,
+                ]
             ],
             "file_dep": [f],
         }
