@@ -3,5 +3,6 @@
 # E501: line lengths
 # E722: bare except covered by pylint
 # E741: ambiguous variable name
+# F841: local variable never used covered by pylint
 # W503: line break before binary operator
-ignore = E501, E722, E741, W503, E203
+ignore = E501, E722, E741, F841, W503, E203
